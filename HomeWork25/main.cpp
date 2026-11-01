@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include "Date.h"
 
 using namespace std;
 
@@ -95,6 +96,44 @@ int main()
 {
     SetConsoleOutputCP(65001);
     SetConsoleCP(65001);
+
+    //РІВЕНЬ 1
+    Date date_1(28, 2, 2026);
+	date_1.print();
+	date_1++;
+	date_1.print();
+
+	Date e(31, 12, 2026);
+	Date old = e++;
+	old.print();
+	e.print();
+	// Инкремент постфиксный, поэтому сначала в old скопировался e, а потом сам e увеличился на один день
+
+	(Date(17, 10, 2026) + 41).print();
+
+	Date date_2(15, 5, 2025);
+	Date date_3(20, 12, 2026);
+    if (date_1 < date_2 && date_1 < date_3)
+    {
+        cout << "Самая ранняя дата: ";
+        date_1.print();
+    }
+    else if (date_2 < date_3)
+	{
+		cout << "Самая ранняя дата: ";
+		date_2.print();
+	}
+	else
+	{
+		cout << "Самая ранняя дата: ";
+		date_3.print();
+	}
+
+	((Date(25, 04, 1999) += 5) += 2).print();
+	Date(31, 4, 2026).print();
+
+    //РІВЕНЬ 2
+
 
     return 0;
 }
