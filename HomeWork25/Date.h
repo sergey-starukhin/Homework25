@@ -11,6 +11,7 @@ private:
 	int year;
 
 	int daysInMonth() const;
+	bool isLeap() const;
 
 public:
 	Date(const int day_, const int month_, const int year_) : day(1), month(1), year(1)
@@ -41,6 +42,10 @@ public:
 	void print() const;
 
 };
+
+inline bool Date::isLeap() const {
+	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+}
 
 inline bool Date::operator==(const Date& other) const {
 	return day == other.day && month == other.month && year == other.year;
@@ -73,4 +78,6 @@ inline bool Date::operator>=(const Date& other) const {
 inline void Date::print() const {
 	cout << (day < 10 ? "0" : "") << day << "." << (month < 10 ? "0" : "") << month << "." << year << endl;
 }
+
+
 

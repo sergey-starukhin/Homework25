@@ -5,6 +5,8 @@ int Date::daysInMonth() const
 	switch (month)
 	{
 	case 2:
+		if (isLeap())
+			return 29;
 		return 28;
 	case 4:
 	case 6:
@@ -88,7 +90,7 @@ Date Date::operator-(const int days) {
 
 int Date::operator-(const Date& other) const {
 	if (*this < other) {
-		return -(other - *this);
+		return (other - *this);
 	}
 	else {
 		Date temp = other;
