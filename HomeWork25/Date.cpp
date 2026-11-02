@@ -68,7 +68,7 @@ Date& Date::operator+=(const int days) {
 	return *this;
 }
 
-Date Date::operator+(const int days) {
+Date Date::operator+(const int days) const{
 	Date result = *this;
 	result += days;
 	return result;
@@ -82,7 +82,7 @@ Date& Date::operator-=(const int days) {
 	return *this;
 }
 
-Date Date::operator-(const int days) {
+Date Date::operator-(const int days) const {
 	Date result = *this;
 	result -= days;
 	return result;

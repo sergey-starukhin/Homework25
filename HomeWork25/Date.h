@@ -29,9 +29,9 @@ public:
 	Date& operator--();
 	Date operator--(int);
 	Date& operator+=(const int days);
-	Date operator+(const int days);
+	Date operator+(const int days) const;
 	Date& operator-=(const int days);
-	Date operator-(const int days);
+	Date operator-(const int days) const;
 	int operator-(const Date& other) const;
 	bool operator==(const Date& other) const;
 	bool operator<(const Date& other) const;
